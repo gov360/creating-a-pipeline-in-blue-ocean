@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh 'npm install'
+        sh 'npm install -g cnpm --registry=https://registry.npm.taobao.org'
       }
     }
     stage('Test') {
