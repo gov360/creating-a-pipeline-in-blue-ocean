@@ -8,11 +8,13 @@ pipeline {
   }
   stages {
     stage('Build') {
+      agent any
       steps {
         sh 'npm install'
       }
     }
     stage('Test') {
+      agent any
       environment {
         CI = 'true'
       }
