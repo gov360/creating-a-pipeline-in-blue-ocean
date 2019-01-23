@@ -14,7 +14,6 @@ pipeline {
       }
     }
     stage('Test') {
-      agent any
       environment {
         CI = 'true'
       }
@@ -23,6 +22,7 @@ pipeline {
       }
     }
     stage('Deliver') {
+      agent any
       steps {
         sh './jenkins/scripts/deliver.sh'
         input 'Finished using the web site? (Click "Proceed" to continue)'
