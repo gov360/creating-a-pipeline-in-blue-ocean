@@ -8,7 +8,6 @@ pipeline {
   }
   stages {
     stage('Build') {
-      agent any
       steps {
         sh 'npm install -g cnpm --registry=https://registry.npm.taobao.org'
       }
@@ -19,7 +18,6 @@ pipeline {
       }
     }
     stage('Deliver') {
-      agent any
       steps {
         sh './jenkins/scripts/deliver.sh'
         input 'Finished using the web site? (Click "Proceed" to continue)'
